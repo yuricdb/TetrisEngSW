@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let slowHit = document.getElementById('slowHit');
   let audioRotation = document.getElementById('audioRotation'); 
   let audioPause = document.getElementById('audioPause'); 
-  let audioGameOver = document.getElementById('audioGameOver');  
+  let audioGameOver = document.getElementById('audioGameOver');
+  sound = 'off' 
+  
+  
+
    
   //The Tetrominoes
   const lTetromino = [
@@ -130,7 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function freeze() { 
     if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
       current.forEach(index => squares[currentPosition + index].classList.add('taken'))
+      if (sound === 'on'){
       slowHit.play();
+      }
       //start a new tetromino falling
       random = nextRandom
       nextRandom = Math.floor(Math.random() * theTetrominoes.length)
@@ -201,7 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
     current = theTetrominoes[random][currentRotation]
     checkRotatedPosition()
     draw()
+    if (sound === 'on'){
     audioRotation.play();
+    }
   }
   /////////
 
@@ -259,7 +267,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     clearInterval(timerId)
     timerId = null
+    if (sound === 'on'){
     audioPause.play();
+    }
     score = 0
     scoreDisplay.innerHTML = 0
     currentPosition = 4
@@ -272,9 +282,13 @@ document.addEventListener('DOMContentLoaded', () => {
       let nomeDigitado = prompt('Digite seu nome de jogador:')
       nome.textContent = nomeDigitado;
       status = 'on';
+      audioTheme.play()
+      sound = 'on'
     } else {
       nome.textContent = "";
       status = 'off';
+      audioTheme.pause()
+      sound = 'off'
     }
     
 
@@ -293,7 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (timerId) {
       clearInterval(timerId)
       timerId = null
-      audioPause.play();
+      if (sound === 'on'){
+        audioPause.play();
+      }
     } else {
       draw()
       timerId = setInterval(moveDown, segundos) //moveDown, 1000
@@ -331,7 +347,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     clearInterval(timerId)
     timerId = null
+    if (sound === 'on'){
     audioPause.play();
+    }
     score = 0
     scoreDisplay.innerHTML = 0
     currentPosition = 4
@@ -374,7 +392,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         }
-        lineDrop.play();
+        if (sound === 'on'){
+          lineDrop.play();
+        }
       }
     }
     console.log(segundos)
@@ -391,11 +411,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let audioTheme = document.getElementById('audioTheme');
       if(audioTheme.paused){
-        audioGameOver.play(); 
+        if (sound === 'on'){
+        audioGameOver.play();
+        } 
       }else{
         togglePlay(audioTheme);     
         setTimeout(function(){ 
+          if (sound === 'on'){
           audioGameOver.play(); 
+          }
         }, 500);
       }      
       
@@ -415,5 +439,11 @@ function togglePlay(audioTheme) {
 // Sound Theme of the Game
 function activateSound(){  
   let audioTheme = document.getElementById('audioTheme');
-  togglePlay(audioTheme)  
+  togglePlay(audioTheme)
+  if (sound === 'on'){
+    sound = 'off'
+  } else {
+    sound = 'on'
+  }
+   
 }
