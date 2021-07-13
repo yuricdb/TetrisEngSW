@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoreDisplay = document.querySelector('#score')
   const startBtn = document.querySelector('#start-button')
   const resetBtn = document.querySelector('#reset-button')
+  const onoffBtn = document.querySelector('#onoff-button')
   const width = 10
   let nextRandom = 0
   let timerId
@@ -244,6 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
   resetBtn.addEventListener('click', () => {
     location.reload()
   })
+
+  onoffBtn.addEventListener('click', () => {
+
+  })
+
 
   //add score
   function addScore() {
