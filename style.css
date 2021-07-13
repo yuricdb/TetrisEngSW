@@ -208,12 +208,13 @@ span{
    
 }
 
-body{
+html{
   margin: auto;
   background-color: black;
   background-image: linear-gradient(to bottom right, #381722, #667D69, #1F1F1F);
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   background-repeat: no-repeat;
+  min-height: 100%;
   
 }
 
