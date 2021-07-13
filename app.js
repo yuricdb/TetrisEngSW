@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let timerId
   let score = 0
   let level = 0
+  let status = 'on';
 
   // Audios game  
   let lineDrop = document.getElementById('lineDrop');    
@@ -222,10 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   //add functionality to the button ON OFF
   onOffBtn.addEventListener('click',()=>{
-    //remove any trace of a tetromino form the entire grid
-    let nullValue = '';
 
-    //remove any trace of a tetromino form the entire grid
     displaySquares.forEach(square => {
       square.classList.remove('tetromino')
       square.style.backgroundColor = ''
@@ -237,6 +235,27 @@ document.addEventListener('DOMContentLoaded', () => {
         index.classList.remove('tetromino');      
     })
 
+    for (let i = 0; i < 199; i +=width) {
+    const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
+        row.forEach(index => {
+          squares[index].classList.remove('taken')
+        })
+    }
+
+    if (!timerId) {
+      let nomeDigitado = prompt('Digite seu nome de jogador:')
+      nome.textContent = nomeDigitado;
+      status = "on";
+    } else {
+      nome.textContent = "";
+      status = "off";
+    }
+    
+    clearInterval(timerId)
+    timerId = null
+    audioPause.play();
+    scoreDisplay.innerHTML = 0
+
   })
   
 
@@ -244,6 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //add functionality to the button star
   startBtn.addEventListener('click', () => {    
+
+    if (status === 'off') {
+      alert("Aparelho desligado. Ligar para iniciar!")
+      return false;
+    }
 
     if (timerId) {
       clearInterval(timerId)
