@@ -1,5 +1,7 @@
 # Mini game Tetris
 
+## Link para o game deployado
+https://compassionate-montalcini-429a2f.netlify.app/
 ## Contexto Geral
 Projeto da cadeira de Engenharia de Software para aprender sobre HTML, CSS e lógicas de JavaScript fazendo o clássico Tetris!
 
