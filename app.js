@@ -285,6 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       nome.textContent = "";
       status = 'off';
+      audioTheme.pause()
+      sound = 'off'
     }
     
 
