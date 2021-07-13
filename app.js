@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   let nome = document.querySelector('.nome'); //coloquei agora
-  let nomeDigitado = prompt('Digite seu nome de jogador:')
-  nome.textContent = nomeDigitado;
   const grid = document.querySelector('.grid')
   let squares = Array.from(document.querySelectorAll('.grid div'))
   const scoreDisplay = document.querySelector('#score')
@@ -14,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let timerId
   let score = 0
   let level = 0
-  let status = 'on';
+  let status = 'off';
 
   // Audios game  
   let lineDrop = document.getElementById('lineDrop');    
@@ -243,15 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    if (!timerId) {
-      let nomeDigitado = prompt('Digite seu nome de jogador:')
-      nome.textContent = nomeDigitado;
-      status = 'on';
-    } else {
-      nome.textContent = "";
-      status = 'off';
-    }
-    
     clearInterval(timerId)
     timerId = null
     audioPause.play();
@@ -260,10 +249,19 @@ document.addEventListener('DOMContentLoaded', () => {
     currentRotation = 0
     segundos = 1000
 
+    if ((!timerId) && (status === 'off')) {
+      let nomeDigitado = prompt('Digite seu nome de jogador:')
+      nome.textContent = nomeDigitado;
+      status = 'on';
+    } else {
+      nome.textContent = "";
+      status = 'off';
+    }
+    
+
   })
   
 
-  
 
   //add functionality to the button star
   startBtn.addEventListener('click', () => {    
@@ -288,7 +286,42 @@ document.addEventListener('DOMContentLoaded', () => {
   
   //add functionality to the button reset
   resetBtn.addEventListener('click',()=>{
-    location.reload();
+
+    if (status === 'off') {
+      alert("Inicie o jogo.")
+      return false;
+    }
+
+    displaySquares.forEach(square => {
+      square.classList.remove('tetromino')
+      square.style.backgroundColor = ''
+    })
+
+    squares.forEach(index => {
+      if(index.hasAttribute('tetromino'))        
+        index.setAttribute('style', nullValue);
+        index.classList.remove('tetromino');      
+    })
+
+    for (let i = 0; i < 199; i +=width) {
+    const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
+        row.forEach(index => {
+          squares[index].classList.remove('taken')
+        })
+    }
+
+    clearInterval(timerId)
+    timerId = null
+    audioPause.play();
+    scoreDisplay.innerHTML = 0
+    currentPosition = 4
+    currentRotation = 0
+    segundos = 1000
+
+    draw()
+    timerId = setInterval(moveDown, segundos) //moveDown, 1000
+    //nextRandom = Math.floor(Math.random()*theTetrominoes.length) //problema, sempre que aperta start muda o obj seguinte
+    displayShape()
   })
 
   //add score
