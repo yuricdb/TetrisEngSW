@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   let nome = document.querySelector('.nome'); //coloquei agora
   let verifyExistName = localStorage.getItem('name')
-  if (verifyExistName === null) {
-    var nomeDigitado = prompt('Digite seu nome de jogador:')
-    nome.textContent = nomeDigitado;
-    localStorage.setItem('name', nomeDigitado)
-  } else {
+  if (verifyExistName !== null) {
     nome.textContent = verifyExistName;
   }
   const grid = document.querySelector('.grid')
@@ -296,8 +292,13 @@ document.addEventListener('DOMContentLoaded', () => {
     level = 0
 
     if ((!timerId) && (status === 'off')) {
-      let nomeDigitado = prompt('Digite seu nome de jogador:')
-      nome.textContent = nomeDigitado;
+      if (verifyExistName === null) {
+        var nomeDigitado = prompt('Digite seu nome de jogador:')
+        nome.textContent = nomeDigitado;
+        localStorage.setItem('name', nomeDigitado)
+      } else {
+        nome.textContent = verifyExistName;
+      }
       status = 'on';
       audioTheme.play()
       sound = 'on'
