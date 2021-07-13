@@ -55,7 +55,7 @@
 }
 
 
-#start-button {
+#start-button, #reset-button {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
