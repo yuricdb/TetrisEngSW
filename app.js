@@ -247,7 +247,8 @@ document.addEventListener('DOMContentLoaded', () => {
     scoreDisplay.innerHTML = 0
     currentPosition = 4
     currentRotation = 0
-    segundos = 1000
+    segundos = 1000 
+    level = 0
 
     if ((!timerId) && (status === 'off')) {
       let nomeDigitado = prompt('Digite seu nome de jogador:')
@@ -316,6 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scoreDisplay.innerHTML = 0
     currentPosition = 4
     currentRotation = 0
+    level = 0
     segundos = 1000
 
     draw()
