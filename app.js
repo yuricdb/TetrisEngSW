@@ -282,6 +282,8 @@ document.addEventListener('DOMContentLoaded', () => {
       let nomeDigitado = prompt('Digite seu nome de jogador:')
       nome.textContent = nomeDigitado;
       status = 'on';
+      audioTheme.play()
+      sound = 'on'
     } else {
       nome.textContent = "";
       status = 'off';
