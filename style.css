@@ -80,6 +80,10 @@ button{
   cursor: pointer;
 }
 
+button:focus{
+  outline: none;
+}
+
 #start-button {
   display: flex;
   flex-wrap: wrap;
