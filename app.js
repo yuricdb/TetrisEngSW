@@ -65,8 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPosition = 4
   let currentRotation = 0
 
-  console.log(theTetrominoes[0][0])
-
   //randomly select a Tetromino and its first rotation
   let random = Math.floor(Math.random()*theTetrominoes.length)
   let current = theTetrominoes[random][currentRotation]
@@ -89,16 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //assign functions to keyCodes
   function control(e) {
-    if(e.keyCode === 37) {
-      moveLeft()
-    } else if (e.keyCode === 38) {
-      rotate()
-    } else if (e.keyCode === 39) {
-      moveRight()
-    } else if (e.keyCode === 40) {
-      moveDown()
+    if (status === 'on') {
+      if(e.keyCode === 37) {
+        moveLeft()
+      } else if (e.keyCode === 38) {
+        rotate()
+      } else if (e.keyCode === 39) {
+        moveRight()
+      } else if (e.keyCode === 40) {
+        moveDown()
+      }
     }
   }
+
   document.addEventListener('keyup', control)
 
   //move down function
@@ -245,16 +246,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!timerId) {
       let nomeDigitado = prompt('Digite seu nome de jogador:')
       nome.textContent = nomeDigitado;
-      status = "on";
+      status = 'on';
     } else {
       nome.textContent = "";
-      status = "off";
+      status = 'off';
     }
     
     clearInterval(timerId)
     timerId = null
     audioPause.play();
     scoreDisplay.innerHTML = 0
+    currentPosition = 4
+    currentRotation = 0
+    segundos = 1000
 
   })
   
