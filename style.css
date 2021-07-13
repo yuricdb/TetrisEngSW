@@ -207,10 +207,11 @@ span{
 }
 
 .direcionais {
-
+  
   grid-area: direcionais;
   display: grid;
-  
+  justify-content: center;
+  justify-items: center;
   width: 420px;
   height: 120px;
   grid-template-columns: 1fr 1fr;
@@ -225,25 +226,33 @@ span{
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+
 }
 
 .direcionaisEsq > div {
-
-  background-color: red;
+  display: flex;
   height: 38px;
   width: 40px;
-  outline: 2px solid;
+  justify-content: center;
+  
+}
+
+#centro{
+  width: 40px;
 }
 
 .direcionaisEsq > div> button{
   width: 40px;
   height: 40px;
+  
 }
 
 #rotate-button{
   width: 90px;
   height: 90px;
   border-radius: 50%;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
 #direcionalEsqMaior{
