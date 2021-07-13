@@ -14,6 +14,7 @@ h3 {
   font-family: digitalFont;
   font-size: 1.4em;
   color: #00000ac4;
+  height: 20px;
   
 }
 
@@ -132,10 +133,21 @@ button{
   width: 80px;
 }
 
+
+
 span{
   display: flex;
   justify-content: center;
+  
 }
+
+
+.highestScoreDiv{
+  
+  align-items: center;
+  justify-content: center;
+}
+
 
 .externo4 {
   display: grid;
@@ -182,7 +194,7 @@ span{
   border-radius: 18px;
   background-image: var(--gradienteAzul);
   box-shadow: 2px 5px 9px rgba(0, 0, 0, 0.301), inset 0px -9px rgba(61, 57, 57, 0.295), inset 0px -25px rgba(61, 57, 57, 0.295);
-  min-height: 800px;
+  min-height: 900px;
   min-width: 450px;
   margin: auto;
   grid-column: 360px;
@@ -191,16 +203,52 @@ span{
 		"telaCompleta"
     "meio"
 		"botoesMenores"
-    "novo";
+    "direcionais";
 }
 
 .direcionais {
-  grid-area: novo;
-  background-color: white;
-  width: 200px;
-  height: 20px;
+
+  grid-area: direcionais;
+  display: grid;
+  
+  width: 420px;
+  height: 120px;
+  grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"quatroBtns rotacao"
+
 }
 
+.direcionaisEsq{
+  grid-area: quatroBtns;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.direcionaisEsq > div {
+
+  background-color: red;
+  height: 38px;
+  width: 40px;
+  outline: 2px solid;
+}
+
+.direcionaisEsq > div> button{
+  width: 40px;
+  height: 40px;
+}
+
+#rotate-button{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+#direcionalEsqMaior{
+  width: 210px;
+}
 
 .velocidade{
   grid-area: velocidade;
@@ -214,7 +262,6 @@ span{
   height: 90px;
   box-shadow: inset 0px 4px rgba(43, 43, 43, 0.315), inset 0px -4px rgba(43, 43, 43, 0.192) ;
   border-radius: 15px;
-  
    
 }
 
@@ -228,14 +275,3 @@ html{
   
 }
 
-.scoreDiv{
-  text-align: center;
-}
-
-.highestScoreDiv{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.levelDiv{ text-align: center;}
