@@ -19,12 +19,27 @@ document.addEventListener('DOMContentLoaded', () => {
     [width, width*2, width*2+1, width*2+2]
   ]
 
+  const l2Tetromino = [
+    [1,width+1,width*2+1, width*2+2], //
+    [width, width+1, width+2, width*2], //
+    [2, 1, width+2, width*2+2],
+    [width+2, width*2, width*2+1, width*2+2] //
+  ]
+
   const zTetromino = [
     [0,width,width+1,width*2+1],
     [width+1, width+2,width*2,width*2+1],
     [0,width,width+1,width*2+1],
     [width+1, width+2,width*2,width*2+1]
   ]
+
+  const z2Tetromino = [
+    [1,width+1,width, width*2],
+    [width, width+1,width*2+1,width*2+2],
+    [1,width+1,width, width*2],
+    [width, width+1,width*2+1,width*2+2]
+  ]
+
 
   const tTetromino = [
     [1,width,width+1,width+2],
@@ -47,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     [width,width+1,width+2,width+3]
   ]
 
-  const theTetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
+  const theTetrominoes = [lTetromino, l2Tetromino, zTetromino,  z2Tetromino, tTetromino, oTetromino, iTetromino]
 
   let currentPosition = 4
   let currentRotation = 0
@@ -187,8 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //the Tetrominos without rotations
   const upNextTetrominoes = [
-    [1, displayWidth+1, displayWidth*2+1, 2], //lTetromino
-    [0, displayWidth, displayWidth+1, displayWidth*2+1], //zTetromino
+    [1, displayWidth+1, displayWidth*2+1, 2], //l
+    [2, 1, width+2, width*2+2], //(l2) verificar se a rotação é semelhante a de cima
+    [0, displayWidth, displayWidth+1, displayWidth*2+1], //z
+    [0,width,width+1,width*2+1], //z2
     [1, displayWidth, displayWidth+1, displayWidth+2], //tTetromino
     [0, 1, displayWidth, displayWidth+1], //oTetromino
     [1, displayWidth+1, displayWidth*2+1, displayWidth*3+1] //iTetromino
