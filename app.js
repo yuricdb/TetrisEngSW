@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let audioPause = document.getElementById('audioPause'); 
   let audioGameOver = document.getElementById('audioGameOver');
   sound = 'off' 
-  audioTheme.play()
+  
   
 
    
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(timerId)
       timerId = null
       if (sound === 'on'){
-      audioPause.play();
+        audioPause.play();
       }
     } else {
       draw()
