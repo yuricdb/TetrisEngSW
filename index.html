@@ -247,9 +247,9 @@
         </div>
         
         <div class='containerMenu'>
-          <h3>Player:<span class="nome">0</span></h3>
-          <h3>Score:<span id="score"><br>0</span></h3>
-          <h3>Level:<span id="velocidade"><br>0</span></h3>
+          <h3 class="nomeDiv">Player:<span class="nome">0</span></h3>
+          <h3 class="scoreDiv">Score:<span id="score"><br>0</span></h3>
+          <h3 class="levelDiv">Level:<span id="level"><br>0</span></h3>
           
         </div> 
       </div>
@@ -257,8 +257,8 @@
       <div class="externo4">
         <div class="ext4Div">
           <div><button id="start-button"></div>
-          <div><button id="start-button"></div>
-          <div><button id="onoff-button"></div>
+          <div><button id="sound-button" onclick="activateSound()"></div>
+          <div><button id="onOff-button" ></div>
           <div><button id="reset-button"></div>
           <h4>Start/Stop</h4><h4>Sound</h4><h4>ON/OFF</h4><h4>Reset</h4>                  
         </div>
@@ -266,6 +266,29 @@
 
     </div>  
 
+    <audio id="audioTheme">
+      <source src="sounds/originalTetrisTheme.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="audioRotation">
+      <source src="sounds/sounds_block-rotate.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="lineDrop">
+      <source src="sounds/sounds_line-drop.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="slowHit">
+      <source src="sounds/sounds_slow-hit.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="audioPause">
+      <source src="sounds/sounds_pause.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="audioGameOver">
+      <source src="sounds/sounds_gameover.mp3" type="audio/mp3">
+    </audio>
 
   </body>
 </html>
