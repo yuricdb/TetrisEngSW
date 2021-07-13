@@ -228,3 +228,17 @@ html{
   
 }
 
+<<<<<<< HEAD
+=======
+.scoreDiv{
+  text-align: center;
+}
+
+.highestScoreDiv{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.levelDiv{ text-align: center;}
+>>>>>>> Criar função de max score e salvar nome do usuario
