@@ -244,10 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(timerId)
     timerId = null
     audioPause.play();
+    score = 0
     scoreDisplay.innerHTML = 0
     currentPosition = 4
     currentRotation = 0
     segundos = 1000 
+    levelDisplay.innerHTML = 0
     level = 0
 
     if ((!timerId) && (status === 'off')) {
@@ -314,10 +316,12 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(timerId)
     timerId = null
     audioPause.play();
+    score = 0
     scoreDisplay.innerHTML = 0
     currentPosition = 4
     currentRotation = 0
     level = 0
+    levelDisplay.innerHTML = 0
     segundos = 1000
 
     draw()
