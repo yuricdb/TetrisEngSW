@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   let nome = document.querySelector('.nome'); //coloquei agora
   let verifyExistName = localStorage.getItem('name')
-  if (verifyExistName === null) {
-    localStorage.setItem('name', nomeDigitado)
-  } else {
+  if (verifyExistName !== null) {
     nome.textContent = verifyExistName;
   }
   const grid = document.querySelector('.grid')
