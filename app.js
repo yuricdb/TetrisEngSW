@@ -293,7 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ((!timerId) && (status === 'off')) {
       if (verifyExistName === null) {
-        var nomeDigitado = prompt('Digite seu nome de jogador:')
+        while (!nomeDigitado) {
+          var nomeDigitado = prompt('Digite seu nome de jogador:')
+        }
         nome.textContent = nomeDigitado;
         localStorage.setItem('name', nomeDigitado)
       } else {
