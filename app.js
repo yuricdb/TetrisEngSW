@@ -1,8 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   let nome = document.querySelector('.nome'); //coloquei agora
+  let verifyExistName = localStorage.getItem('name')
+  if (verifyExistName === null) {
+    var nomeDigitado = prompt('Digite seu nome de jogador:')
+    nome.textContent = nomeDigitado;
+    localStorage.setItem('name', nomeDigitado)
+  } else {
+    nome.textContent = verifyExistName;
+  }
   const grid = document.querySelector('.grid')
   let squares = Array.from(document.querySelectorAll('.grid div'))
   const scoreDisplay = document.querySelector('#score')
+  const highestScoreDisplay = document.querySelector('#highestScore')
   const levelDisplay = document.querySelector('#level')
   const startBtn = document.querySelector('#start-button') 
   const onOffBtn = document.querySelector('#onOff-button'); 
@@ -130,6 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
   //teste velocidade
   var segundos = 1000
 
+  //Adicionando highest score
+  let verifyExistHighestScore = localStorage.getItem('highestScore')
+  if (verifyExistHighestScore === null) {
+    localStorage.setItem('highestScore', 0)
+    highestScoreDisplay.innerHTML = 0
+  } else {
+    highestScoreDisplay.innerHTML = verifyExistHighestScore
+  }
+  
   //freeze function
   function freeze() { 
     if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
@@ -212,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   /////////
-
   
   
   //show up-next tetromino in mini-grid display
@@ -366,7 +383,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //add score
   function addScore() {
-
     for (let i = 0; i < 199; i +=width) {
       const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
 
@@ -389,8 +405,11 @@ document.addEventListener('DOMContentLoaded', () => {
           timerId = setInterval(moveDown, segundos) 
           level +=1
           levelDisplay.innerHTML = level
-
-
+        }
+        let highestScore = localStorage.getItem('highestScore')
+        if (score > highestScore) {
+          highestScoreDisplay.innerHTML = score
+          localStorage.setItem('highestScore', score)
         }
         if (sound === 'on'){
           lineDrop.play();
