@@ -7,7 +7,11 @@ https://compassionate-montalcini-429a2f.netlify.app/
 https://gavs2.medium.com/mini-projeto-de-engenharia-de-software-2887853c2f85
 ## Contexto Geral
 Projeto da cadeira de Engenharia de Software para aprender sobre HTML, CSS e lógicas de JavaScript fazendo o clássico Tetris!
-
+<br></br>
+<p align="center">
+  <img src="./gameImage.jpg" width="200">
+</p>
+<br></br>
 ## Funcionalidades
  - Botão ON/OFF para ligar ou desligar o video game.
  - Botão Start/Stop para iniciar o jogo ou dar um pause.
