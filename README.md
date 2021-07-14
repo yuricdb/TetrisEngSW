@@ -13,6 +13,7 @@ Projeto da cadeira de Engenharia de Software para aprender sobre HTML, CSS e ló
  - Botão Start/Stop para iniciar o jogo ou dar um pause.
  - Botão Sound para ligar ou desligar a música do jogo.
  - Botão Reset para resetar a fase do zero.
+ - A velocidade do jogo escala de acordo com as pontuações do usuário.
 
 ## Detalhes do Jogo
 - O nome do player fica salvo depois da primeira vez que o usuário colocar no input.
