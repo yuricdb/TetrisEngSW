@@ -12,6 +12,7 @@ Projeto da cadeira de Engenharia de Software para aprender sobre HTML, CSS e ló
   <img src="./gameImage.jpg" width="200">
 </p>
 <br></br>
+
 ## Funcionalidades
  - Botão ON/OFF para ligar ou desligar o video game.
  - Botão Start/Stop para iniciar o jogo ou dar um pause.
