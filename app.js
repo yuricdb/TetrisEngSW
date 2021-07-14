@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const startBtn = document.querySelector('#start-button') 
   const onOffBtn = document.querySelector('#onOff-button'); 
   const resetBtn = document.querySelector("#reset-button");
+  document.getElementById("containerMenu").classList.add("classToBeAdded");
   const width = 10
   let nextRandom = 0
   let timerId
@@ -293,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ((!timerId) && (status === 'off')) {
       
+      document.getElementById("containerMenu").classList.remove("classToBeAdded");
       if (verifyExistName === null) {
         while (!nomeDigitado) {
           var nomeDigitado = prompt('Digite seu nome de jogador:')
@@ -306,6 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
       audioTheme.play()
       sound = 'on'
     } else {
+      document.getElementById("containerMenu").classList.add("classToBeAdded");
       nome.textContent = "";
       status = 'off';
       audioTheme.pause()
