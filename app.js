@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //assign functions to keyCodes
   function control(e) {
-    if (status === 'on') {
+    if (status === 'on' && timerId) {
       if(e.keyCode === 37) {
         moveLeft()
       } else if (e.keyCode === 38) {
@@ -292,6 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
     level = 0
 
     if ((!timerId) && (status === 'off')) {
+      
       if (verifyExistName === null) {
         while (!nomeDigitado) {
           var nomeDigitado = prompt('Digite seu nome de jogador:')
@@ -309,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
       status = 'off';
       audioTheme.pause()
       sound = 'off'
+      
     }
     
 
