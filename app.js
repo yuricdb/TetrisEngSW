@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const startBtn = document.querySelector('#start-button') 
   const onOffBtn = document.querySelector('#onOff-button'); 
   const resetBtn = document.querySelector("#reset-button");
+  document.getElementById("containerMenu").classList.add("classToBeAdded");
   const width = 10
   let nextRandom = 0
   let timerId
@@ -107,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //assign functions to keyCodes
   function control(e) {
-    if (status === 'on') {
+    if (status === 'on' && timerId) {
       if(e.keyCode === 37) {
         moveLeft()
       } else if (e.keyCode === 38) {
@@ -292,8 +293,12 @@ document.addEventListener('DOMContentLoaded', () => {
     level = 0
 
     if ((!timerId) && (status === 'off')) {
+      
+      document.getElementById("containerMenu").classList.remove("classToBeAdded");
       if (verifyExistName === null) {
-        var nomeDigitado = prompt('Digite seu nome de jogador:')
+        while (!nomeDigitado) {
+          var nomeDigitado = prompt('Digite seu nome de jogador:')
+        }
         nome.textContent = nomeDigitado;
         localStorage.setItem('name', nomeDigitado)
       } else {
@@ -303,10 +308,12 @@ document.addEventListener('DOMContentLoaded', () => {
       audioTheme.play()
       sound = 'on'
     } else {
+      document.getElementById("containerMenu").classList.add("classToBeAdded");
       nome.textContent = "";
       status = 'off';
       audioTheme.pause()
       sound = 'off'
+      
     }
     
 
