@@ -2,7 +2,7 @@
 
 
 ## Contexto Geral
-Com o objetivo de aplicar alguns testes no jogo desenvolvido foram realizadas simulações de ações que o usuário poderia fazer e também foram verificadas as respostas do software após os comandos dados pelo usuário.
+Com o objetivo de aplicar alguns testes no jogo desenvolvido, foram realizadas simulações de ações que o usuário poderia fazer e também foram verificadas as respostas do software após os comandos dados pelo usuário.
 
 
 ## Testes Realizados
