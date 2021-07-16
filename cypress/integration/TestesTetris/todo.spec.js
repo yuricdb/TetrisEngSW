@@ -45,3 +45,4 @@ describe('Teste Jogo Tetris', () => {
       cy.get('#level').contains('span', 'end');
   })
   })
+ //Sugestão de Teste: Parar e Retornar Jogo, Reiniciar com video game desligado, Parar e Retornar Som, Tentar movimentar com jogo Pausado
