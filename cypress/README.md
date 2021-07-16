@@ -9,7 +9,7 @@ Com o objetivo de aplicar alguns testes no jogo desenvolvido foram realizadas si
  - Ligar o videogame (Botão On/Off)
  - Iniciar a Partida (Botão Start/Stop)
  - Parar os sons (Botão Sound)
- - Reiniciar o Jogo (Botão Sound)
+ - Reiniciar o Jogo (Botão Reset)
  - Movimentar as peças
  - Verificar tela do GameOver
 
