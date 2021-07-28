@@ -4,7 +4,7 @@ const  teclas = ['{uparrow}','{downarrow}','{leftarrow}','{rightarrow}']
 const nomes = ['Yuri', 'Daniel', 'Victor'] //para cada um dos novos teste add, terá que ir add nomes aqui para entrar no alert, ex: 'giovanni', etc
 
 describe('Teste Jogo Tetris', () => {
-    beforeEach(function() { cy.visit('http://127.0.0.1:5500/index.html')})
+    beforeEach(function() { cy.visit('/')})
     
     it('Teste Botões - Alert', function(){
         cy.window().then(function($win){
