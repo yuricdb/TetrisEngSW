@@ -22,7 +22,7 @@ describe('Teste Jogo Tetris', () => {
 
     })
 
-    it('Teste Movimento das Peças - Alert', function(){
+    it.skip('Teste Movimento das Peças - Alert', function(){
         cy.window().then(function($win){
             cy.viewport(1600,1080)
             cy.stub($win, 'prompt').returns(nomes[1])
@@ -36,7 +36,7 @@ describe('Teste Jogo Tetris', () => {
 
     })
 
-    it('Teste Game-Over - Alert', function(){
+    it.skip('Teste Game-Over - Alert', function(){
         cy.window().then(function($win){
             cy.viewport(1600,1080)
             cy.stub($win, 'prompt').returns(nomes[2])
@@ -53,4 +53,37 @@ describe('Teste Jogo Tetris', () => {
 
     })
 
+
+
+})
+
+// Novos testes 
+
+describe('Novos Testes JogoTetris', function() {  
+
+    it('Check if site contains buttons', function (){
+        
+        cy.contains('Start/Stop')
+        cy.contains('Sound')
+        cy.contains('ON/OFF')
+        cy.contains('Reset')
+
+    })
+
+    it('Check if grid and mini grid exists', function (){
+        cy.get('.mini-grid')
+        cy.get('.grid')
+    }) 
+
+    it('Check if the score of the player and number of score', function (){
+        cy.contains('Player:')
+        cy.contains('Score:')
+    })
+    
+    it('Check if we loaded the placeholder for the score', function (){
+        cy.get('#score')
+       
+    })      
+
+    
 })
