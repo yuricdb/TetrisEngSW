@@ -5,6 +5,10 @@ https://compassionate-montalcini-429a2f.netlify.app/
 
 ## Link para a publicação no Medium
 https://gavs2.medium.com/mini-projeto-de-engenharia-de-software-2887853c2f85
+
+## Link para a publicação no Medium - Testes
+https://medium.com/@victorneves15/mini-projeto-de-engenharia-de-software-desenvolvendo-a-parte-de-testes-do-projeto-bb1ab322acc1
+
 ## Contexto Geral
 Projeto da cadeira de Engenharia de Software para aprender sobre HTML, CSS e lógicas de JavaScript fazendo o clássico Tetris!
 <br></br>
