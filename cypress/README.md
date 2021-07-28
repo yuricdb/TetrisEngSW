@@ -13,3 +13,6 @@ Com o objetivo de aplicar alguns testes no jogo desenvolvido, foram realizadas s
  - Movimentar as peças
  - Verificar tela do GameOver
 
+ ## Dificuldades Encontradas
+A principal dificuldade encontrada foi conseguir fazer com que os testes realizados com o Cypress conseguissem passar pelo 'alert' inicial do jogo, no qual é solicitado o preenchimento do nome do jogador. Esta dificuldade foi superada e em cada teste realizado, um novo nome de jogador é inserido. 
+
